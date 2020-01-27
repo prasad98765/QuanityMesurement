@@ -3,10 +3,14 @@ package QuantityMesurement;
 import java.util.Objects;
 
 public class Feet {
-    public Double value;
+    public double value;
 
-    public Feet(Double value) {
-        this.value = value;
+    public Feet(Double value) throws MesurementException {
+        try {
+            this.value = value;
+        } catch (NullPointerException n){
+            throw new MesurementException(n.getMessage(),MesurementException.Type.NULL_VALUE);
+        }
     }
 
     @Override
