@@ -1,0 +1,24 @@
+package QuantityMesurement;
+
+import java.util.Objects;
+
+public class Feet {
+    public Double value;
+
+    public Feet(Double value) {
+        this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Feet feet = (Feet) o;
+        return Objects.equals(value, feet.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+}
