@@ -14,7 +14,7 @@ public class QuantityMeasureTest {
     }
 
     @Test
-    public void givenNullMesure_shouldReturnException() {
+    public void givenNullFeetMesure_shouldReturnException() {
         try {
             Feet first = new Feet(null);
             Feet second = new Feet(null);
@@ -37,4 +37,14 @@ public class QuantityMeasureTest {
         Assert.assertEquals(first,second);
     }
 
+    @Test
+    public void givenNullInchMesure_shouldReturnException() {
+        try {
+            Inch first = new Inch(null);
+            Inch second = new Inch(null);
+        }
+        catch (MesurementException e) {
+            Assert.assertEquals(MesurementException.Type.NULL_VALUE, e.type);
+        }
+    }
 }
