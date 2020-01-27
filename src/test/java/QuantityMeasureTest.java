@@ -25,7 +25,7 @@ public class QuantityMeasureTest {
     }
 
     @Test
-    public void givenSameReference_shouldReturnEqual() throws MesurementException {
+    public void givenSameReferenceOfFeet_shouldReturnEqual() throws MesurementException {
         Feet first = new Feet(0.0);
         Assert.assertTrue(first.equals(first));
     }
@@ -46,5 +46,11 @@ public class QuantityMeasureTest {
         catch (MesurementException e) {
             Assert.assertEquals(MesurementException.Type.NULL_VALUE, e.type);
         }
+    }
+
+    @Test
+    public void givenSameReferenceOfInch_shouldReturnEqual() throws MesurementException {
+        Inch first = new Inch(0.0);
+        Assert.assertTrue(first.equals(first));
     }
 }
