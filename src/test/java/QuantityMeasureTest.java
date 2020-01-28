@@ -133,4 +133,12 @@ public class QuantityMeasureTest {
         QuantityMesurement cm = new QuantityMesurement(Unit.CM, 5);
         Assert.assertEquals(inch, cm);
     }
+
+    @Test
+    public void givenTwoInchAndTwoInch_shouldReturnFourInch() {
+        QuantityMesurement inch1 = new QuantityMesurement(Unit.INCH, 2);
+        QuantityMesurement inch2 = new QuantityMesurement(Unit.INCH, 2);
+        double additionValue = inch1.addition(inch2);
+        Assert.assertEquals(4,additionValue,0);
+    }
 }

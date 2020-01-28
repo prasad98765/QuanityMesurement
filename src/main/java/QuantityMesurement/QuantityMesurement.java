@@ -10,18 +10,23 @@ public class QuantityMesurement {
         this.measure = measure;
     }
 
-    public double Unitconversion(double value) {
+    public double unitConversion(double value) {
         return Math.round(unit.unitValue * value);
     }
 
+    public double addition(QuantityMesurement val) {
+        double val1 = unitConversion(this.measure);
+        double val2 = unitConversion(val.measure);
+        return val1 + val2;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuantityMesurement that = (QuantityMesurement) o;
-        double value1 = this.Unitconversion(measure);
-        double value2 = that.Unitconversion(that.measure);
+        double value1 = this.unitConversion(measure);
+        double value2 = that.unitConversion(that.measure);
         if (measure == 0 && that.measure == 0)
             return true;
         if (value1 == value2)
@@ -30,11 +35,4 @@ public class QuantityMesurement {
                 unit == that.unit;
     }
 
-    @Override
-    public String toString() {
-        return "QuantityMesurement{" +
-                "unit=" + unit +
-                ", measure=" + measure +
-                '}';
-    }
 }
