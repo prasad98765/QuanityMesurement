@@ -51,8 +51,15 @@ public class QuantityMeasureTest {
 
     @Test
     public void givenOneFeetAndOneInch_shouldReturnNotEquals() {
-        LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
-        LengthMesurement second = new LengthMesurement(LengthMesurement.Unit.FEET, 1);
-        Assert.assertNotEquals(first, second);
+        LengthMesurement feet = new LengthMesurement(LengthMesurement.Unit.FEET, 1);
+        LengthMesurement inch = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
+        Assert.assertNotEquals(feet, inch);
+    }
+
+    @Test
+    public void givenOneInchAndOneFeet_shouldReturnNotEquals() {
+        LengthMesurement inch = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
+        LengthMesurement feet = new LengthMesurement(LengthMesurement.Unit.FEET, 1);
+        Assert.assertNotEquals(inch, feet);
     }
 }
