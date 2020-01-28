@@ -24,9 +24,9 @@ public class QuantityMeasureTest {
     }
 
     @Test
-    public void givenZeroAndZeroInch_shouldReturnEqual() throws MesurementException {
-        LengthMesurement first = new LengthMesurement(Unit.INCH, 1);
-        LengthMesurement second = new LengthMesurement(Unit.FEET, 1);
+    public void givenZeroInchAndZeroInch_shouldReturnEqual() throws MesurementException {
+        LengthMesurement first = new LengthMesurement(Unit.INCH, 0);
+        LengthMesurement second = new LengthMesurement(Unit.INCH, 0);
         Assert.assertEquals(first, second);
     }
 
