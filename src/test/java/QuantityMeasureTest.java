@@ -1,56 +1,51 @@
-import QuantityMesurement.Feet;
-import QuantityMesurement.Inch;
-import QuantityMesurement.MesurementException;
-import QuantityMesurement.QuantityMesure;
+import QuantityMesurement.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class QuantityMeasureTest {
     @Test
-    public void givenZeroAndZeroFeet_shouldReturnEqual() throws MesurementException {
-        Feet first = new Feet(0.0);
-        Feet second = new Feet(0.0);
-        Assert.assertEquals(first,second);
+    public void givenZeroFeetAndZeroFeet_shouldReturnEqual() throws MesurementException {
+        LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.FEET, 0.0);
+        LengthMesurement second = new LengthMesurement(LengthMesurement.Unit.FEET, 0.0);
+        Assert.assertEquals(first, second);
     }
 
     @Test
-    public void givenNullFeetMesure_shouldReturnException() {
+    public void givenSameTypeSameValueInFeet_shouldReturnException() {
         try {
-            Feet first = new Feet(null);
-            Feet second = new Feet(null);
-        }
-        catch (MesurementException e) {
+            LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.FEET, 1);
+            LengthMesurement second = new LengthMesurement(LengthMesurement.Unit.FEET, 1);
+        } catch (MesurementException e) {
             Assert.assertEquals(MesurementException.Type.NULL_VALUE, e.type);
         }
     }
 
     @Test
     public void givenSameReferenceOfFeet_shouldReturnEqual() throws MesurementException {
-        Feet first = new Feet(0.0);
+        LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.FEET, 0.0);
         Assert.assertTrue(first.equals(first));
     }
 
     @Test
     public void givenZeroAndZeroInch_shouldReturnEqual() throws MesurementException {
-        Inch first = new Inch(0.0);
-        Inch second = new Inch(0.0);
-        Assert.assertEquals(first,second);
+        LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
+        LengthMesurement second = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
+        Assert.assertEquals(first, second);
     }
 
     @Test
-    public void givenNullInchMesure_shouldReturnException() {
+    public void givenSameTypeSameValueInInch_shouldReturnException() {
         try {
-            Inch first = new Inch(null);
-            Inch second = new Inch(null);
-        }
-        catch (MesurementException e) {
+            LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
+            LengthMesurement second = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
+        } catch (MesurementException e) {
             Assert.assertEquals(MesurementException.Type.NULL_VALUE, e.type);
         }
     }
 
     @Test
     public void givenSameReferenceOfInch_shouldReturnEqual() throws MesurementException {
-        Inch first = new Inch(0.0);
+        LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.INCH, 0.0);
         Assert.assertTrue(first.equals(first));
     }
 }
