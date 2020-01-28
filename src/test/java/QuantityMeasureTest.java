@@ -66,8 +66,15 @@ public class QuantityMeasureTest {
 
     @Test
     public void given1FeetAnd12Inch_shouldReturnEqual() {
-        LengthMesurement first = new LengthMesurement(Unit.FEET, 1);
-        LengthMesurement second = new LengthMesurement(Unit.INCH, 12);
-        Assert.assertEquals(first, second);
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 1);
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 12);
+        Assert.assertEquals(feet, inch);
+    }
+
+    @Test
+    public void given12InchAnd1Feet_shouldReturnEqual() {
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 1);
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 12);
+        Assert.assertEquals(inch, feet);
     }
 }
