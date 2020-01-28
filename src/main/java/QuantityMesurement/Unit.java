@@ -12,7 +12,8 @@ public enum Unit {
         unitValue = i;
     }
 
-    public double convertor(double value) {
+    public double convertor(double value)
+    {
         return this.unitValue * value;
     }
 }

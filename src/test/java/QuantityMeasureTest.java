@@ -5,118 +5,123 @@ import org.junit.Test;
 public class QuantityMeasureTest {
     @Test
     public void givenZeroFeetAndZeroFeet_shouldReturnEqual() {
-        QuantityMeasurement first = new QuantityMeasurement(Unit.FEET, 0.0);
-        QuantityMeasurement second = new QuantityMeasurement(Unit.FEET, 0.0);
-        Assert.assertEquals(first, second);
-    }
-
-    @Test
-    public void givenSameTypeSameValueInFeet_shouldReturnException() {
-        QuantityMeasurement first = new QuantityMeasurement(Unit.FEET, 1);
-        QuantityMeasurement second = new QuantityMeasurement(Unit.FEET, 1);
+        LengthMesurement first = new LengthMesurement(Unit.FEET, 0.0);
+        LengthMesurement second = new LengthMesurement(Unit.FEET, 0.0);
         Assert.assertEquals(first, second);
     }
 
     @Test
     public void givenSameReferenceOfFeet_shouldReturnEqual() {
-        QuantityMeasurement first = new QuantityMeasurement(Unit.FEET, 0.0);
+        LengthMesurement first = new LengthMesurement(Unit.FEET, 0.0);
         Assert.assertTrue(first.equals(first));
     }
 
     @Test
+    public void givenSameTypeSameValueInFeet_shouldReturnException() {
+        LengthMesurement first = new LengthMesurement(Unit.FEET, 1);
+        LengthMesurement second = new LengthMesurement(Unit.FEET, 1);
+        Assert.assertEquals(first, second);
+    }
+
+    @Test
     public void givenZeroInchAndZeroInch_shouldReturnEqual() {
-        QuantityMeasurement first = new QuantityMeasurement(Unit.INCH, 0);
-        QuantityMeasurement second = new QuantityMeasurement(Unit.INCH, 0);
+        LengthMesurement first = new LengthMesurement(Unit.INCH, 0);
+        LengthMesurement second = new LengthMesurement(Unit.INCH, 0);
         Assert.assertEquals(first, second);
     }
 
     @Test
     public void givenSameTypeSameValueInInch_shouldReturnException() {
-        QuantityMeasurement first = new QuantityMeasurement(Unit.INCH, 0);
-        QuantityMeasurement second = new QuantityMeasurement(Unit.FEET, 0);
+        LengthMesurement first = new LengthMesurement(Unit.INCH, 1);
+        LengthMesurement second = new LengthMesurement(Unit.INCH, 1);
         Assert.assertEquals(first, second);
     }
 
     @Test
     public void givenSameReferenceOfInch_shouldReturnEqual() {
-        QuantityMeasurement first = new QuantityMeasurement(Unit.INCH, 0.0);
+        LengthMesurement first = new LengthMesurement(Unit.INCH, 0.0);
         Assert.assertTrue(first.equals(first));
     }
 
+//    ------
+
     @Test
     public void givenZeroFeetAndZeroInch_shouldReturnEquals() {
-        QuantityMeasurement first = new QuantityMeasurement(Unit.INCH, 0);
-        QuantityMeasurement second = new QuantityMeasurement(Unit.FEET, 0);
+        LengthMesurement first = new LengthMesurement(Unit.INCH, 0);
+        LengthMesurement second = new LengthMesurement(Unit.FEET, 0);
+//        System.out.println(first.toString()+" "+second.toString());
         Assert.assertEquals(first, second);
     }
 
     @Test
     public void givenOneFeetAndOneInch_shouldReturnNotEquals() {
-        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1);
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 1);
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 1);
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 1);
         Assert.assertNotEquals(feet, inch);
     }
 
     @Test
     public void givenOneInchAndOneFeet_shouldReturnNotEquals() {
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 1);
-        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1);
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 1);
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 1);
         Assert.assertNotEquals(inch, feet);
     }
 
     @Test
-    public void given1FeetAnd12Inch_shouldReturnEqual() {
-        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1);
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 12);
+    public void givenOneFeetAndTwelveInch_shouldReturnEqual() {
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 1);
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 12);
         Assert.assertEquals(feet, inch);
     }
 
     @Test
-    public void given12InchAnd1Feet_shouldReturnEqual() {
-        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1);
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 12);
+    public void givenTwelveInchAndOneFeet_shouldReturnEqual() {
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 12);
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 1);
         Assert.assertEquals(inch, feet);
     }
 
+//    --------
+
     @Test
-    public void given3FeetAnd1Yard_shouldReturnEqual() {
-        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 3);
-        QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1);
+    public void givenThreeFeetAndOneYard_shouldReturnEqual() {
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 3);
+        LengthMesurement yard = new LengthMesurement(Unit.YARD, 1);
         Assert.assertEquals(feet, yard);
     }
 
     @Test
-    public void given1FeetAnd1Yard_shouldReturnNotEqual() {
-        QuantityMeasurement feet = new QuantityMeasurement(Unit.FEET, 1);
-        QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1);
+    public void givenOneFeetAndOneYard_shouldReturnNotEqual() {
+        LengthMesurement feet = new LengthMesurement(Unit.FEET, 1);
+        LengthMesurement yard = new LengthMesurement(Unit.YARD, 1);
         Assert.assertNotEquals(feet, yard);
     }
 
     @Test
-    public void given1InchAnd1Yard_shouldReturnNotEqual() {
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 1);
-        QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1);
+    public void givenOneInchAndOneYard_shouldReturnNotEqual() {
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 1);
+        LengthMesurement yard = new LengthMesurement(Unit.YARD, 1);
         Assert.assertNotEquals(inch, yard);
     }
 
     @Test
-    public void given1YardAnd36Inch_shouldReturnEqual() {
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 36);
-        QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1);
+    public void givenOneYardAndThirtySixInch_shouldReturnEqual() {
+        LengthMesurement yard = new LengthMesurement(Unit.YARD, 1);
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 36);
         Assert.assertEquals(yard, inch);
     }
 
     @Test
-    public void given36InchAnd1Yard_shouldReturnEqual() {
-        QuantityMeasurement inch = new QuantityMeasurement(Unit.INCH, 36);
-        QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1);
+    public void givenThirtySixInchAndOneYard_shouldReturnEqual() {
+        LengthMesurement inch = new LengthMesurement(Unit.INCH, 36);
+        LengthMesurement yard = new LengthMesurement(Unit.YARD, 1);
         Assert.assertEquals(inch, yard);
     }
 
     @Test
-    public void given1YardAnd3Feet_shouldReturnEqual() {
-        QuantityMeasurement feet= new QuantityMeasurement(Unit.FEET, 3);
-        QuantityMeasurement yard = new QuantityMeasurement(Unit.YARD, 1);
+    public void givenOneYardAndThreeFeet_shouldReturnEqual() {
+        LengthMesurement yard = new LengthMesurement(Unit.YARD, 1);
+        LengthMesurement feet= new LengthMesurement(Unit.FEET, 3);
         Assert.assertEquals(yard,feet);
     }
 }
