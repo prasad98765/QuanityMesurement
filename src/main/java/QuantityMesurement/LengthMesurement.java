@@ -9,13 +9,9 @@ public class LengthMesurement {
     Unit unit;
     double measure;
 
-    public LengthMesurement(Unit unit, double measure) throws MesurementException {
-        try {
+    public LengthMesurement(Unit unit, double measure) {
             this.unit = unit;
             this.measure = measure;
-        }catch (NullPointerException n){
-            throw new MesurementException(n.getMessage(),MesurementException.Type.NULL_VALUE);
-        }
     }
 
     @Override
@@ -23,7 +19,9 @@ public class LengthMesurement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LengthMesurement that = (LengthMesurement) o;
-        return unit == that.unit &&
-                Objects.equals(measure, that.measure);
+        if (measure == 0 && that.measure == 0)
+            return true;
+        return Double.compare(that.measure, measure) == 0 &&
+                this.unit == that.unit;
     }
 }
