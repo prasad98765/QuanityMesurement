@@ -48,4 +48,11 @@ public class QuantityMeasureTest {
         LengthMesurement second = new LengthMesurement(LengthMesurement.Unit.FEET, 0);
         Assert.assertEquals(first, second);
     }
+
+    @Test
+    public void givenOneFeetAndOneInch_shouldReturnNotEquals() {
+        LengthMesurement first = new LengthMesurement(LengthMesurement.Unit.INCH, 1);
+        LengthMesurement second = new LengthMesurement(LengthMesurement.Unit.FEET, 1);
+        Assert.assertNotEquals(first, second);
+    }
 }
