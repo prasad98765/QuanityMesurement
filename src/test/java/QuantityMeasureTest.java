@@ -157,4 +157,12 @@ public class QuantityMeasureTest {
         double additionValue = feet1.addition(feet2);
         Assert.assertEquals(24,additionValue,0);
     }
+
+    @Test
+    public void givenTwoInchAndTwoPointFiveCM_shouldReturnThreeInch() {
+        QuantityMesurement inch = new QuantityMesurement(Unit.INCH, 2);
+        QuantityMesurement cm = new QuantityMesurement(Unit.CM, 2.5);
+        double additionValue = inch.addition(cm);
+        Assert.assertEquals(3,additionValue,0);
+    }
 }
