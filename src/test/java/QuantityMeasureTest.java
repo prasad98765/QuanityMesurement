@@ -149,4 +149,12 @@ public class QuantityMeasureTest {
         double additionValue = feet.addition(inch);
         Assert.assertEquals(14,additionValue,0);
     }
+
+    @Test
+    public void givenOneFeetAndOneFeet_shouldReturnTwentyFourInch() {
+        QuantityMesurement feet1 = new QuantityMesurement(Unit.FEET, 1);
+        QuantityMesurement feet2 = new QuantityMesurement(Unit.FEET, 1);
+        double additionValue = feet1.addition(feet2);
+        Assert.assertEquals(24,additionValue,0);
+    }
 }
