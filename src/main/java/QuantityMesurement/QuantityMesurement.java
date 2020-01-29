@@ -10,13 +10,13 @@ public class QuantityMesurement {
         this.measure = measure;
     }
 
-    public double unitConversion(double value) {
-        return Math.round(unit.unitValue * value);
+    public double unitConversion() {
+        return Math.round((this.unit.unitValue) * this.measure);
     }
 
     public double addition(QuantityMesurement val) {
-        double val1 = unitConversion(this.measure);
-        double val2 = unitConversion(val.measure);
+        double val1 = this.unitConversion();
+        double val2 = val.unitConversion();
         return val1 + val2;
     }
 
@@ -25,8 +25,8 @@ public class QuantityMesurement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuantityMesurement that = (QuantityMesurement) o;
-        double value1 = this.unitConversion(measure);
-        double value2 = that.unitConversion(that.measure);
+        double value1 = this.unitConversion();
+        double value2 = that.unitConversion();
         if (measure == 0 && that.measure == 0)
             return true;
         if (value1 == value2)
