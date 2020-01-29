@@ -27,12 +27,11 @@ public class QuantityMesurement {
         QuantityMesurement that = (QuantityMesurement) o;
         double value1 = this.unitConversion();
         double value2 = that.unitConversion();
+        this.unit = that.unit;
         if (measure == 0 && that.measure == 0)
             return true;
-        if (value1 == value2)
+        if (value1 == value2 && this.unit.equals(that.unit))
             return true;
-        return Double.compare(that.measure, measure) == 0 &&
-                unit == that.unit;
+        return false;
     }
-
 }

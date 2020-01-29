@@ -49,7 +49,6 @@ public class QuantityMeasureTest {
     public void givenZeroFeetAndZeroInch_shouldReturnEquals() {
         QuantityMesurement first = new QuantityMesurement(Unit.INCH, 0);
         QuantityMesurement second = new QuantityMesurement(Unit.FEET, 0);
-//        System.out.println(first.toString()+" "+second.toString());
         Assert.assertEquals(first, second);
     }
 
@@ -87,7 +86,7 @@ public class QuantityMeasureTest {
     public void givenThreeFeetAndOneYard_shouldReturnEqual() {
         QuantityMesurement feet = new QuantityMesurement(Unit.FEET, 3);
         QuantityMesurement yard = new QuantityMesurement(Unit.YARD, 1);
-        Assert.assertEquals(feet, yard);
+        Assert.assertTrue(feet.equals(yard));
     }
 
     @Test
@@ -164,5 +163,12 @@ public class QuantityMeasureTest {
         QuantityMesurement cm = new QuantityMesurement(Unit.CM, 2.5);
         double additionValue = inch.addition(cm);
         Assert.assertEquals(3,additionValue,0);
+    }
+
+    @Test
+    public void givenOneGallonAndThreePointSevenEightLitres_shouldReturnEqual() {
+        QuantityMesurement gallon = new QuantityMesurement(Unit.GALLON, 1);
+        QuantityMesurement liter = new QuantityMesurement(Unit.LITER, 3.78);
+        Assert.assertEquals(gallon, liter);
     }
 }
