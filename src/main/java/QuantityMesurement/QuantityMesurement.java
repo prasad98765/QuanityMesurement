@@ -11,7 +11,7 @@ public class QuantityMesurement {
     }
 
     public double unitConversion() {
-        return Math.round((this.unit.unitValue) * this.measure);
+        return ((unit.unitValue) * measure);
     }
 
     public double addition(QuantityMesurement val) {

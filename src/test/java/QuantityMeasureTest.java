@@ -128,9 +128,9 @@ public class QuantityMeasureTest {
 
     @Test
     public void givenOneInchAndThreeCM_shouldReturnEqual() {
-        QuantityMesurement inch = new QuantityMesurement(Unit.INCH, 2);
+        QuantityMesurement inch = new QuantityMesurement(Unit.INCH, 1.968503935);
         QuantityMesurement cm = new QuantityMesurement(Unit.CM, 5);
-        Assert.assertEquals(inch, cm);
+        Assert.assertEquals(inch,cm);
     }
 
     @Test
@@ -162,20 +162,28 @@ public class QuantityMeasureTest {
         QuantityMesurement inch = new QuantityMesurement(Unit.INCH, 2);
         QuantityMesurement cm = new QuantityMesurement(Unit.CM, 2.5);
         double additionValue = inch.addition(cm);
-        Assert.assertEquals(3,additionValue,0);
+        Assert.assertEquals(3,additionValue,0.03);
     }
 
     @Test
     public void givenOneGallonAndThreePointSevenEightLitres_shouldReturnEqual() {
         QuantityMesurement gallon = new QuantityMesurement(Unit.GALLON, 1);
-        QuantityMesurement liter = new QuantityMesurement(Unit.LITER, 3.78);
+        QuantityMesurement liter = new QuantityMesurement(Unit.LITRE, 3.78);
         Assert.assertEquals(gallon, liter);
     }
 
     @Test
     public void givenOneLitreAndOneThousandML_shouldReturnEqual() {
-        QuantityMesurement litre = new QuantityMesurement(Unit.LITER, 1);
+        QuantityMesurement litre = new QuantityMesurement(Unit.LITRE, 1);
         QuantityMesurement ml = new QuantityMesurement(Unit.ML, 1000);
-        Assert.assertEquals(litre, ml);
+        Assert.assertTrue(litre.equals(ml));
+    }
+
+    @Test
+    public void givenOneGallonAndThreePointSevenLitres_shouldReturnSevenPointFiveLitres() {
+        QuantityMesurement gallon = new QuantityMesurement(Unit.GALLON, 1);
+        QuantityMesurement liter = new QuantityMesurement(Unit.LITRE, 3.78);
+        double additionValue = gallon.addition(liter);
+        Assert.assertEquals(7.56,additionValue,0.03);
     }
 }
