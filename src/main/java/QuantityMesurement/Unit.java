@@ -7,7 +7,8 @@ public enum Unit {
     YARD(36),
     CM(1 / 2.54),
     GALLON(1),
-    LITER(1 / 3.78);
+    LITER(1 / 3.78),
+    ML(1 / 1000);;
 
     public double unitValue;
 
