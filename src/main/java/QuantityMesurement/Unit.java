@@ -2,17 +2,21 @@ package QuantityMesurement;
 
 public enum Unit {
 
-    FEET(12),
-    INCH(1),
-    YARD(36),
-    CM(0.393700787),
-    GALLON(3.78),
-    LITRE(1),
-    ML(0.001);
+    FEET("LENGTH", 12),
+    INCH("LENGTH", 1),
+    YARD("LENGTH", 36),
+    CM("LENGTH", 0.393700787),
+    GALLON("VOLUME", 3.78),
+    LITRE("VOLUME", 1),
+    ML("VOLUME", 0.001);
+
 
     public double unitValue;
+    public String Type;
 
-    Unit(double i) {
-        unitValue = i;
+
+    Unit(String unitType, double val) {
+        unitValue = val;
+        Type = unitType;
     }
 }
