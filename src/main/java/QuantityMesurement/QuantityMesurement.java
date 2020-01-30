@@ -9,7 +9,6 @@ public class QuantityMesurement {
     public QuantityMesurement(String unitType, Unit unit, double measure) {
         this.unit = unit;
         this.unit.Type = this.unitType = unitType;
-//        this.unitType = unitType;
         this.measure = measure;
     }
 

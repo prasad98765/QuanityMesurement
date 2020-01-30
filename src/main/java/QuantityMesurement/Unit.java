@@ -8,8 +8,9 @@ public enum Unit {
     CM("LENGTH", 0.393700787),
     GALLON("VOLUME", 3.78),
     LITRE("VOLUME", 1),
-    ML("VOLUME", 0.001);
-
+    ML("VOLUME", 0.001),
+    KG("MASS",1),
+    GRAMS("MASS",0.001);
 
     public double unitValue;
     public String Type;

@@ -199,4 +199,12 @@ public class QuantityMeasureTest {
         Assert.assertEquals(liter,ml);
         Assert.assertEquals(2,additionValue,0.0);
     }
+
+    @Test
+    public void givenOneKGAndOneThousandGrams_shouldReturnEqual() {
+        QuantityMesurement kg = new QuantityMesurement("MASS",Unit.KG, 1);
+        QuantityMesurement grams = new QuantityMesurement("MASS",Unit.GRAMS ,1000);
+        Assert.assertTrue(kg.equals(grams));
+    }
+
 }
