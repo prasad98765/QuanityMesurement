@@ -11,7 +11,9 @@ public enum Unit {
     ML("VOLUME", 0.001),
     KG("MASS",1),
     GRAMS("MASS",0.001),
-    TONNE("MASS",1000);
+    TONNE("MASS",1000),
+    FAHRENHEIT("TEMPERATURE"),
+    CELSIUS("TEMPERATURE",1);
 
     public double unitValue;
     public String Type;
@@ -20,5 +22,9 @@ public enum Unit {
     Unit(String unitType, double val) {
         unitValue = val;
         Type = unitType;
+    }
+
+    Unit(String temperature) {
+        Type = temperature;
     }
 }

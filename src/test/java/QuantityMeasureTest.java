@@ -164,7 +164,6 @@ public class QuantityMeasureTest {
         QuantityMesurement inch = new QuantityMesurement("LENGTH",Unit.INCH, 2);
         QuantityMesurement cm = new QuantityMesurement("LENGTH",Unit.CM, 2.5);
         double additionValue = inch.addition(cm);
-       // Assert.assertEquals(inch,cm);
         Assert.assertEquals(3,additionValue,0.02);
     }
 
@@ -220,5 +219,12 @@ public class QuantityMeasureTest {
         QuantityMesurement grams = new QuantityMesurement("MASS",Unit.GRAMS ,1000);
         double additionValue = tonne.addition(grams);
         Assert.assertEquals(1001,additionValue,0);
+    }
+
+    @Test
+    public void givenTwoOneTwoFahrenheitAndOneHundredCelsius_shouldReturnEqual() {
+        QuantityMesurement fahrenheit = new QuantityMesurement("TEMPERATURE",Unit.FAHRENHEIT, 212);
+        QuantityMesurement celsius = new QuantityMesurement("TEMPERATURE",Unit.CELSIUS ,100);
+        Assert.assertTrue(fahrenheit.equals(celsius));
     }
 }

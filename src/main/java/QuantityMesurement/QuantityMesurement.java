@@ -13,6 +13,9 @@ public class QuantityMesurement {
     }
 
     public double unitConversion() {
+        if(Unit.FAHRENHEIT.equals(this.unit)) {
+            return ((this.measure - 32) * 5 / 9);
+        }
         return ((unit.unitValue) * measure);
     }
 
