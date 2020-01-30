@@ -10,7 +10,8 @@ public enum Unit {
     LITRE("VOLUME", 1),
     ML("VOLUME", 0.001),
     KG("MASS",1),
-    GRAMS("MASS",0.001);
+    GRAMS("MASS",0.001),
+    TONNE("MASS",1000);
 
     public double unitValue;
     public String Type;

@@ -207,4 +207,10 @@ public class QuantityMeasureTest {
         Assert.assertTrue(kg.equals(grams));
     }
 
+    @Test
+    public void givenOneTonneAndOneThousandKGs_shouldReturnEqual() {
+        QuantityMesurement tonne = new QuantityMesurement("MASS",Unit.TONNE, 1);
+        QuantityMesurement kg = new QuantityMesurement("MASS",Unit.KG ,1000);
+        Assert.assertTrue(tonne.equals(kg));
+    }
 }
