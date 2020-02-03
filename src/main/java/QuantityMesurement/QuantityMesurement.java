@@ -3,12 +3,10 @@ package QuantityMesurement;
 public class QuantityMesurement {
 
     Unit unit;
-    String unitType;
     double measure;
 
-    public QuantityMesurement(String unitType, Unit unit, double measure) {
+    public QuantityMesurement( Unit unit, double measure) {
         this.unit = unit;
-        this.unit.Type = this.unitType = unitType;
         this.measure = measure;
     }
 
@@ -33,9 +31,9 @@ public class QuantityMesurement {
         double value1 = this.unitConversion();
         double value2 = that.unitConversion();
         this.unit = that.unit;
-        if (measure == 0 && that.measure == 0)
+        if (this.measure == 0 && that.measure == 0)
             return true;
-        if (value1 == value2 && this.unit.equals(that.unit) && this.unitType.equals(that.unitType))
+        if (value1 == value2 && this.unit.equals(that.unit) && this.unit.Type.equals(that.unit.Type))
             return true;
         return false;
     }
